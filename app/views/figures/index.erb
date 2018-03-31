@@ -1,6 +1,5 @@
-<% Landmark.all.each do |x| %>
+<% Figure.all.each do |x| %>
 <h2><%= x.name%></h2>
-<h2><%= x.year_completed%></h2>
 <a href="/figures/<%= x.id%>">show <%= x.name%>'s page</a></br>
 <a href="/figures/<%= x.id%>/edit">edit <%= x.name%>'s page</a>
 <% end %>

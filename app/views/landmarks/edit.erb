@@ -1,0 +1,16 @@
+<h2>Edit the <%=@landmark.name%> Landmark</h2>
+<form method='post' action='/landmarks/<%= @landmark.id%>'>
+    <label for='landmark[name]'>New Landmark Name</labe>
+    <input name='landmark[name]' type='text' id='name'/></br>
+    <label for='landmark[year_completed]'>New Landmark Year Created(was <%=@landmark.year_completed%></label>
+    <input name='landmark[year_completed]' type='text' id='year_completed'/></br>
+    <h3>Please associate an existing figure with the landmark or create a new figure to associate</h3>
+    <% Figure.all.each do |x| %>
+    <input type='checkbox' name='landmark[figure_id]' value='<%=x.id%>' id='figure_<%=x.id%>'><%= x.name %></input>
+    <% end %>
+    </br>
+    <h2>Create a new figure and associate</h2>
+    <label for='figure[name]'>Figure Name</labe>
+    <input name='figure[name]' type='text' id='figure_name'/></br>    
+    <input type='submit' value='Edit Landmark'/>
+</form>
